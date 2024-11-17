@@ -714,6 +714,7 @@ def register_new_images(G, new_camera_id_1, new_camera_id_2, cameras, tracks, ca
 
     points1 = get_feature_points(other_camera, remaining_track_ids)
     points2 = get_feature_points(new_camera, remaining_track_ids)
+    # FundamentalMat here just used to pick the inliners, just for a RANSAC, not used for recovering relative pose
     F, mask = cv2.findFundamentalMat(points1, points2, cv2.FM_RANSAC, ransacReprojThreshold=1.0, confidence=0.999, maxIters=2000)
 
     points_4d_homogeneous = cv2.triangulatePoints(P1, P2, points1.T, points2.T)
