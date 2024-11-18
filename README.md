@@ -4,6 +4,8 @@ The only library needed should be Open3D(used for visualization), python version
 
 `pip install open3d`
 
+(and also networkx, if haven't installed it : `pip install networkx`)
+
 # Usage
 
 `sfm.ipynb ` and `sfm_py` is actually the same.
